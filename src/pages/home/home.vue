@@ -268,7 +268,6 @@
             class="my_info_user_avatarUrl"
             :src=" user.aliasPortrait || 'https://cdn.tellers.cn/tell_v2/static/default-avatar_v2.svg'"
             mode="scaleToFill"
-            @click="login"
           >
           <div class="flex j-start my_info_user_bingPhone">
             <span @click="hold">
@@ -547,10 +546,7 @@ export default {
       this.title_height = totalBar * 2 - toolBar;
     },
     onGotUserInfo(e) {
-      this.$request.auth(e.detail);
-    },
-    login(){
-
+      this.$request.login(e.detail);
     },
     async getBanners() {
       const res1 = await this.$request.post("/index.html");
